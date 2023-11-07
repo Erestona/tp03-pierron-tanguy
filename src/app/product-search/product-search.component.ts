@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class ProductSearchComponent {
 
+  criteria: SearchCriteria = { price: 0, category: '' };
+
+  search()
+  {
+    this.filteredProducts = this.products.filter(product => {
+      const passesCategoryFilter = !this.criteria.category || product.category.includes(this.criteria.category);
+
+      const passesPriceFilter = !this.criteria.price || product.price <= this.criteria.price;
+
+      return passesCategoryFilter && passesPriceFilter;
+    }
+  } 
+}
+
+
+export interface SearchCriteria {
+  category: string;
+  price: number;
 }
