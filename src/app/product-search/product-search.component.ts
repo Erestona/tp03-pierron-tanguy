@@ -22,7 +22,7 @@ export class ProductSearchComponent implements OnInit{
 
       const passesCategoryFilter = !this.criteria.category || products.category.includes(this.criteria.category);
 
-      const passesPriceFilter = !this.criteria.price || products.price <= this.criteria.price;
+      const passesPriceFilter = !this.criteria.price || products.price == this.criteria.price;
       
       return passesCategoryFilter && passesPriceFilter;
     });
