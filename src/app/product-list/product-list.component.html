@@ -9,7 +9,7 @@
     <th> category</th>
     <th> Price</th>
   </tr> 
-  <tr *ngFor="let product of products">
+  <tr *ngFor="let product of filteredProducts">
     <td>{{ product.id }}</td>
     <td>{{ product.name }}</td>
     <td>{{ product.category }}</td>
